@@ -1,5 +1,6 @@
 package com.xenia.notesapp.feature_note.domain.model
 
+import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.xenia.notesapp.ui.theme.BabyBlue
 import com.xenia.notesapp.ui.theme.LightGreen
@@ -7,6 +8,7 @@ import com.xenia.notesapp.ui.theme.RedOrange
 import com.xenia.notesapp.ui.theme.RedPink
 import com.xenia.notesapp.ui.theme.Violet
 
+@Entity(tableName = "table_note")
 data class Note(
     val title: String,
     val content : String,
