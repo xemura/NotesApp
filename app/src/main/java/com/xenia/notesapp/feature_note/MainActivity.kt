@@ -1,4 +1,4 @@
-package com.xenia.notesapp
+package com.xenia.notesapp.feature_note
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
