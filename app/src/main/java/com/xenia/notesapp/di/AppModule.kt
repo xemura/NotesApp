@@ -8,6 +8,7 @@ import com.xenia.notesapp.feature_note.data.repository.NoteRepositoryImpl
 import com.xenia.notesapp.feature_note.domain.repository.NoteRepository
 import com.xenia.notesapp.feature_note.domain.use_case.AddNote
 import com.xenia.notesapp.feature_note.domain.use_case.DeleteNote
+import com.xenia.notesapp.feature_note.domain.use_case.GetNote
 import com.xenia.notesapp.feature_note.domain.use_case.GetNotes
 import com.xenia.notesapp.feature_note.domain.use_case.NoteUseCases
 import dagger.Provides
@@ -36,7 +37,8 @@ object AppModule {
         return NoteUseCases(
             getNotes = GetNotes(repository),
             deleteNote = DeleteNote(repository),
-            addNote = AddNote(repository)
+            addNote = AddNote(repository),
+            getNote = GetNote(repository)
         )
     }
 }
