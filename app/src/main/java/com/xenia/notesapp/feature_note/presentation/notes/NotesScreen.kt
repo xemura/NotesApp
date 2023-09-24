@@ -35,11 +35,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.xenia.notesapp.feature_note.presentation.notes.components.NoteItem
 import com.xenia.notesapp.feature_note.presentation.notes.components.OrderSection
+import com.xenia.notesapp.feature_note.presentation.util.Screen
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -57,9 +59,9 @@ fun NotesScreen(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-
+                    navController.navigate(Screen.AddEditNoteScreen.route)
                 },
-                Modifier.background(MaterialTheme.colorScheme.primary)
+                //Modifier.background(MaterialTheme.colorScheme.primary)
             ) {
                 Icon(imageVector = Icons.Default.Add, contentDescription = "Add note")
             }
@@ -112,7 +114,10 @@ fun NotesScreen(
                             note = note,
                             modifier = Modifier.fillMaxWidth()
                                 .clickable {
-
+                                    navController.navigate(
+                                        Screen.AddEditNoteScreen.route +
+                                        "?noteId=${note.id}&noteColor=${note.color}"
+                                    )
                                 },
                             onDeleteClick = {
                                 viewModel.onEvent(NotesEvent.DeleteNote(note))
