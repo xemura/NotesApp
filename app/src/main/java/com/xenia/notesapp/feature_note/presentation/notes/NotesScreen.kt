@@ -61,7 +61,6 @@ fun NotesScreen(
                 onClick = {
                     navController.navigate(Screen.AddEditNoteScreen.route)
                 },
-                //Modifier.background(MaterialTheme.colorScheme.primary)
             ) {
                 Icon(imageVector = Icons.Default.Add, contentDescription = "Add note")
             }
@@ -79,6 +78,7 @@ fun NotesScreen(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
+                        modifier = Modifier.padding(10.dp),
                         text = "Your note",
                         style = MaterialTheme.typography.bodyLarge
                     )
