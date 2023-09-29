@@ -93,6 +93,8 @@ dependencies {
 
     // Kotlin Extensions and Coroutines support for Room
     implementation ("androidx.room:room-ktx:2.5.2")
+
+    implementation("androidx.compose.ui:ui-text-google-fonts:1.5.2")
 }
 
 // Allow references to generated code
