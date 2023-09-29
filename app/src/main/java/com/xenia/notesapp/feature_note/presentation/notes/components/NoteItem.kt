@@ -1,6 +1,5 @@
 package com.xenia.notesapp.feature_note.presentation.notes.components
 
-import android.view.Display.Mode
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
